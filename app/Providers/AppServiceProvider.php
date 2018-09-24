@@ -15,6 +15,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Passport::routes();
+
+        /**
+         * Register global date serialization format
+         */
+        \Illuminate\Support\Carbon::serializeUsing(function ($carbon) {
+            /** @var \Carbon\Carbon $carbon */
+            return $carbon->toIso8601ZuluString();
+        });
     }
 
     /**

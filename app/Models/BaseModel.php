@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasTimezone;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BaseModel extends Model
 {
-    use Filterable;
+    use Filterable, HasTimezone;
 
     /**
      * Scope to get all rows filtered, sorted and paginated.

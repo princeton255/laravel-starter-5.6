@@ -85,7 +85,7 @@ class Handler extends ExceptionHandler
         if ($exception instanceof ModelNotFoundException) {
             return response()->json([
                 'code' => 404,
-                'message' => 'Not Found!',
+                'message' => 'Resource not Found!',
             ], 404);
         }
 
